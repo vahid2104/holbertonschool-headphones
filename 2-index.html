@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Headphones</title>
+    <link rel="stylesheet" href="2-styles.css" />
+    <link rel="stylesheet" href="holberton_school-icon/style.css" />
+</head>
+
+<body>
+
+    <!-- HERO / HEADER -->
+    <header class="site-hero">
+        <div class="hero-bg"></div>
+
+        <!-- Top bar -->
+        <div class="topbar container">
+            <!-- Burger -->
+            <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="navMobile">
+
+            </button>
+            <div class="brand">
+                <!-- Hazır logo -->
+                <img src="./images/logo_headphones.png" alt="Headphones" class="header_logo" />
+            </div>
+
+            <!-- Desktop nav -->
+            <nav class="nav-desktop">
+                <a href="#what">what we do</a>
+                <a href="#results">our results</a>
+                <a href="#contact">contact us</a>
+            </nav>
+
+
+        </div>
+
+        <!-- Mobile menu -->
+        <nav class="nav-mobile container" id="navMobile">
+            <a href="#what">what we do</a>
+            <a href="#results">our results</a>
+            <a href="#contact">contact us</a>
+        </nav>
+
+        <!-- Hero content -->
+        <div class="hero-content container">
+            <h1>Lorem ipsum dolor set amet lorem ipsum</h1>
+            <p class="kicker">Lorem ipsum dolor set amet lorem ipsum dolor set</p>
+
+            <button type="button" class="btn-cta">CALL TO ACTION</button>
+
+            <p class="lead">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                pariatur.
+            </p>
+        </div>
+    </header>
+
+    <!-- WHAT WE DO -->
+    <section id="what" class="what-we-do container">
+        <h2 class="section-title">What we do…</h2>
+        <p class="section-lead">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+            laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+
+        <ul class="features">
+            <!-- 1 -->
+            <li class="feature-item">
+                <span class="feature-icon holberton_school-icon-ic_sound" aria-hidden="true"></span>
+                <h3 class="feature-title">Lorem ipsum</h3>
+                <p class="feature-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </li>
+
+            <!-- 2 -->
+            <li class="feature-item">
+                <span class="feature-icon holberton_school-icon-ic_video" aria-hidden="true"></span>
+                <h3 class="feature-title">Lorem ipsum</h3>
+                <p class="feature-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </li>
+
+            <!-- 3 -->
+            <li class="feature-item">
+                <span class="feature-icon holberton_school-icon-ic_music" aria-hidden="true"></span>
+                <h3 class="feature-title">Lorem ipsum</h3>
+                <p class="feature-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </li>
+
+            <!-- 4 -->
+            <li class="feature-item">
+                <span class="feature-icon holberton_school-icon-ic_hearing" aria-hidden="true"></span>
+                <h3 class="feature-title">Lorem ipsum</h3>
+                <p class="feature-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- OUR RESULTS -->
+    <section id="results" class="section section--dark results">
+        <div class="container">
+            <h2 class="section-title">Our results speak for themselves</h2>
+            <p class="section-lead">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat.
+            </p>
+
+            <ul class="metrics">
+                <li class="metric-card">
+                    <div class="metric-shape">
+                        <span class="metric-value">+2%</span>
+                        <span class="metric-caption">Lorem ipsum dolor</span>
+                    </div>
+                </li>
+
+                <li class="metric-card">
+                    <div class="metric-shape">
+                        <span class="metric-value">+2%</span>
+                        <span class="metric-caption">Lorem ipsum dolor</span>
+                    </div>
+                </li>
+
+                <li class="metric-card">
+                    <div class="metric-shape">
+                        <span class="metric-value">+2%</span>
+                        <span class="metric-caption">Lorem ipsum dolor</span>
+                    </div>
+                </li>
+
+                <li class="metric-card">
+                    <div class="metric-shape">
+                        <span class="metric-value">+2%</span>
+                        <span class="metric-caption">Lorem ipsum dolor</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+    <!-- JS: mobile menu -->
+    <script>
+        const burger = document.getElementById('burger');
+        const navMobile = document.getElementById('navMobile');
+
+        function closeMenu() {
+            navMobile.classList.remove('open');
+            burger.classList.remove('open');
+            burger.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+        }
+
+        burger.addEventListener('click', () => {
+            const willOpen = !navMobile.classList.contains('open');
+            navMobile.classList.toggle('open');
+            burger.classList.toggle('open'); // ☰ → ✖
+            burger.setAttribute('aria-expanded', String(willOpen));
+            document.body.style.overflow = willOpen ? 'hidden' : '';
+        });
+
+        navMobile.querySelectorAll('a').forEach(a => {
+            a.addEventListener('click', closeMenu);
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeMenu();
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 480) closeMenu();
+        });
+    </script>
+</body>
+
+</html>
