@@ -92,15 +92,13 @@ It demonstrates building a modern, fully responsive web page from scratch.
 
 \## 📂 Project Structure
 
-
-
 holbertonschool-headphones/
 
 │
 
 ├── images/ # Logo \& background images
 
-├── holberton\_school-icon/ # Custom icon font (style.css, fonts/)
+├── holberton_school-icon/ # Custom icon font (style.css, fonts/)
 
 ├── 0-index.html # Initial header/hero
 
@@ -112,6 +110,10 @@ holbertonschool-headphones/
 
 ├── 4-index.html # + Footer (final version)
 
+├── 100-index.html #
+
+├── 101-index.html # + Animations
+
 ├── 0-styles.css # Styles for 0-index.html
 
 ├── 1-styles.css # Styles for 1-index.html
@@ -122,8 +124,13 @@ holbertonschool-headphones/
 
 ├── 4-styles.css # Styles for 4-index.html (final version)
 
-└── README.md
+├── 100-styles.css # Styles for 100-index.html
 
+├── 101-styles.css # Styles for 101-index.html
+
+├── 102-styles.scss # Sass css version for 101-styles.css
+
+└── README.md
 
 
 
@@ -199,4 +206,5 @@ GitHub: @vahid2104
 This project is part of the Holberton School curriculum.
 
 You are free to reuse the code for learning and practice.
+
 
